@@ -40,22 +40,27 @@ for (let i = 0; i < militaryHourArray.length; i++) {
     `);
 }
 
-var renderTasks = function(){
-  var tasks = localStorage.getItem('tasks');
-  //document.querySelectorAll("tasks").textContent = tasks;
-  //document.getElementsByClassName("tasks").innerHTML = tasks;
-}
-renderTasks();
 
-//var taskValue = document.querySelectorAll("tasks").value;
-var taskValue = document.getElementsByClassName("${time}").value;
 var saveButton = document.getElementsByClassName("saveBtn");  
 for (let i=0; i<saveButton.length; i++){
   saveButton[i].addEventListener('click', function(event){
     event.preventDefault();
-    console.log("test")
+    //console.log("test");
 
-    localStorage.setItem("${time}", JSON.stringify(taskValue));
-    //localStorage.setItem("tasks", JSON.stringify(taskValue));
+    var tasksToDo = document.getElementsByClassName("tasks");
     
-})};
+    for (let i=0; i<tasksToDo.length; i++){
+      
+      if(tasksToDo[i].value === null){
+        tasksToDo[i].value = "empty";
+      }
+      
+      //console.log(JSON.stringify(tasksToDo[i].value));
+      window.localStorage.setItem("task", JSON.stringify(tasksToDo[i].value));
+      console.log(JSON.parse(window.localStorage.getItem("task")));
+      JSON.parse(window.localStorage.getItem("task"))
+    }
+})}
+//console.log(window.localStorage.getItem("task"));
+//JSON.parse(window.localStorage.getItem("task"));
+;
