@@ -13,9 +13,6 @@ Creating workday scheduler utilizing JavaScript, Bootstrap, Moment
 ## Website
 https://esherrow.github.io/workday-scheduler/
 
-![Image of Main Display](https://esherrow.github.io/workday-scheduler/assets/images/WDCapture.JPG)
-
-
 
 ## Contribution
 Elizabeth Sherrow
